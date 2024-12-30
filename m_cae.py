@@ -1,7 +1,6 @@
 import torch
 import torch.nn as nn
 import numpy as np 
-import numpy as np 
 from transformers import AutoTokenizer
 from torch.nn.functional import softmax
 tokenizer = AutoTokenizer.from_pretrained('bkai-foundation-models/vietnamese-bi-encoder')
