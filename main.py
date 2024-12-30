@@ -3,12 +3,14 @@ from m_cae import infer_CAE_model
 from m_lstm import infer_LSTM_model
 from m_ml import infer_ML_model
 from data import preprocess_text
+from demo_cvd import infer_LSTM_attention_model
 
 
 model_infer_functions = {
     "LSTM Model": infer_LSTM_model,
     "Model manh vai ca loz": infer_CAE_model,
-    "Machine Learning based Model":infer_ML_model
+    "Machine Learning based Model":infer_ML_model,
+    "LSTM Attention model":infer_LSTM_attention_model
 }
 
 # Define the main inference function to call the appropriate model function
@@ -22,7 +24,7 @@ demo = gr.Interface(
     fn=infer_single_comment,
     inputs=[
         "text",
-        gr.Dropdown(choices=["LSTM Model", "Model manh vai ca loz","Machine Learning based Model"], label="Select Model")
+        gr.Dropdown(choices=["LSTM Model", "Model manh vai ca loz","Machine Learning based Model","LSTM Attention model"], label="Select Model")
     ],
     outputs="text",
     title="Vietnamese Aspect-Based Sentiment Analysis",
